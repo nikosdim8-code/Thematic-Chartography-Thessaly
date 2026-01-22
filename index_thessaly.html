@@ -340,8 +340,8 @@ Examples:
 const map = new maplibregl.Map({
   container: 'map',           // Links to the <div id="map"> element in HTML
   style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',  // Initial basemap style
-  center: [28.4, 36.6],       // 🌍 [longitude, latitude] - CHANGE THIS TO MATCH THE STUDY AREA CENTER (APPROXIMATELY)!
-  zoom: 10                    // 🌍 Initial zoom level - CHANGE THIS SO THAT THE REQUIRED ZOOM LEVEL ENCOMPASSES THE ENTIRE STUDY AREA. SMALLER VALUES - ZOOM OUT!
+  center: [22.4, 39.4],       // 🌍 [longitude, latitude] - CHANGE THIS TO MATCH THE STUDY AREA CENTER (APPROXIMATELY)!
+  zoom: 8.5                    // 🌍 Initial zoom level - CHANGE THIS SO THAT THE REQUIRED ZOOM LEVEL ENCOMPASSES THE ENTIRE STUDY AREA. SMALLER VALUES - ZOOM OUT!
 });
 
 // ============================================================
@@ -371,21 +371,21 @@ const layerDefinitions = {
   popdens: {
     sourceId: 'popdens-src',                       // Internal ID for the data source
     layerId: 'popdens-layer',                      // Internal ID for the map layer
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME',        // 🌍 Path to your file
+    url: 'data/dimoi_pop_dens.geojson',        // 🌍 Path to your file
     dataField: 'FIELD NAME'                           // 🌍 Column name in your GeoJSON
   },
   // Dasymmetric map layer (population density by land cover zone)
   denscover: {
     sourceId: 'denscover-src',
     layerId: 'denscover-layer',
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME',  // 🌍 Path to your file
+    url: 'data/dimoi_popdens_cover.geojson',  // 🌍 Path to your file
     dataField: 'FIELD NAME'                        // 🌍 Column name in your GeoJSON
   },
   // Proportional symbols layer (circles sized by population)
   poipop: {
     sourceId: 'poipop-src',
     layerId: 'poipop-layer',
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME',        // 🌍 Path to your file
+    url: 'data/dimoi_pop.geojson',        // 🌍 Path to your file
     dataField: 'FIELD NAME',                           // 🌍 Column name in your GeoJSON
     maxValueApprox: 150000                         // 🌍 Set the maximum population value (for scaling circles)
   },
@@ -393,19 +393,19 @@ const layerDefinitions = {
   contours: {
     sourceId: 'contours-src',
     layerId: 'contours-layer',
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME'     // 🌍 Path to your file
+    url: 'data/contours.geojson'     // 🌍 Path to your file
   },
   // Dot density layer (each dot represents X people)
   dots: {
     sourceId: 'dots-src',
     layerId: 'dots-layer',
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME'          // 🌍 Path to your file
+    url: 'data/pop_dots.geojson'         // 🌍 Path to your file
   },
   // Boundaries layer (municipal borders)
   boundaries: {
     sourceId: 'boundaries-src',
     layerId: 'boundaries-layer',
-    url: 'DATA FOLDER NAME ON GITHUB/GEOJSON FILE NAME'            // 🌍 Path to your file
+    url: 'data/oria_dimon.geojson'            // 🌍 Path to your file
   }
 };
 
@@ -1073,8 +1073,8 @@ function updateLegend() {
       <div class="legend-map-title">THESSALIA POPULATION</div>
       <div class="legend-author">
         <strong>Data source:</strong> Hellenic Statistical Authority - Population data 2021<br>
-        <strong>Produced by:</strong> XXX<br> <!-- 🌍 Author name and surname -->
-        <strong>Student ID:</strong> XXX<br> <!-- 🌍 Author ID -->
+        <strong>Produced by:</strong> NIKOS DIMITROPOULOS<br> <!-- 🌍 Author name and surname -->
+        <strong>Student ID:</strong> rs20435<br> <!-- 🌍 Author ID -->
         National Technical University of Athens (NTUA)<br>
         School of Rural, Surveying & Geoinformatics Engineering<br>
         Cartography Laboratory<br>
@@ -1699,4 +1699,5 @@ console.log(layerDefinitions);
 -->
 </body>
 </html>
+
 
