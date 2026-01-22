@@ -367,45 +367,45 @@ const map = new maplibregl.Map({
 
 /* 🌍 MODIFY DATA FILE PATHS AND FIELD NAMES */
 const layerDefinitions = {
-  // Choropleth map layer (population density by municipality)
+  // Choropleth map layer
   popdens: {
-    sourceId: 'popdens-src',                       // Internal ID for the data source
-    layerId: 'popdens-layer',                      // Internal ID for the map layer
-    url: 'data/dimoi_pop_dens.geojson',        // 🌍 Path to your file
-    dataField: 'FIELD NAME'                           // 🌍 Column name in your GeoJSON
+    sourceId: 'popdens-src',
+    layerId: 'popdens-layer',
+    url: 'data/dimoi_popdens.geojson', 
+    dataField: 'POPDENS' 
   },
-  // Dasymmetric map layer (population density by land cover zone)
+  // Dasymmetric map layer
   denscover: {
     sourceId: 'denscover-src',
     layerId: 'denscover-layer',
-    url: 'data/dimoi_popdens_cover.geojson',  // 🌍 Path to your file
-    dataField: 'FIELD NAME'                        // 🌍 Column name in your GeoJSON
+    url: 'data/dimoi_popdens_cover.geojson', 
+    dataField: 'DENS_COVER' 
   },
-  // Proportional symbols layer (circles sized by population)
+  // Proportional symbols layer
   poipop: {
     sourceId: 'poipop-src',
     layerId: 'poipop-layer',
-    url: 'data/dimoi_pop.geojson',        // 🌍 Path to your file
-    dataField: 'FIELD NAME',                           // 🌍 Column name in your GeoJSON
-    maxValueApprox: 150000                         // 🌍 Set the maximum population value (for scaling circles)
+    url: 'data/dimoipoi_pop.geojson', 
+    dataField: 'POPMUN', 
+    maxValueApprox: 150000 
   },
-  // Contours/isopleths layer (population potential lines)
+  // Contours/isopleths layer
   contours: {
     sourceId: 'contours-src',
     layerId: 'contours-layer',
-    url: 'data/contours.geojson'     // 🌍 Path to your file
+    url: 'data/pot_contours_200k.geojson' 
   },
-  // Dot density layer (each dot represents X people)
+  // Dot density layer
   dots: {
     sourceId: 'dots-src',
     layerId: 'dots-layer',
-    url: 'data/pop_dots.geojson'         // 🌍 Path to your file
+    url: 'data/pop_dots_300.geojson' 
   },
-  // Boundaries layer (municipal borders)
+  // Boundaries layer
   boundaries: {
     sourceId: 'boundaries-src',
     layerId: 'boundaries-layer',
-    url: 'data/oria_dimon.geojson'            // 🌍 Path to your file
+    url: 'data/dimoi_oria.geojson' 
   }
 };
 
@@ -1699,5 +1699,6 @@ console.log(layerDefinitions);
 -->
 </body>
 </html>
+
 
 
